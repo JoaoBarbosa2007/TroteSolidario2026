@@ -1,37 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Trote Solidário</title>
-        <link rel="Stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav class="menu"> <!-- MENU DE NAVEGAÇÃO -->
-            <div class="menu-container">
-                <a href="index.html" class="menu-logo">Trote 2026</a>
-                <ul>
-                    <li> <a href="index.html">Início</a> </li>
-                    <li> <a href="introducao.html">Introdução</a> </li>
-                    <li> <a href="formato.html">Formato</a> </li>
-                    <li> <a href="equipes.html">Equipes</a> </li>
-                    <li> <a href="provas.html">Provas e Metas</a> </li>
-                    <li> <a href="integracao.html">Integração</a> </li>
-                    <li> <a href="cromogramas.html">Cronograma</a> </li>
-                    <li> <a href="calculadora.html">Calculadora</a> </li>
-                </ul>
-            </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png">
+    <title>Trote Solidário 2026 - Uni-FACEF</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerLogo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo Uni-FACEF">
+            </a>
+        </div>
+        <nav>
+            <ul class="listaNavegacao">
+                <li class="navegacao"><a href="index.html"> Início </a></li>
+                <li class="navegacao"><a href="introducao.html"> Introdução </a></li>
+                <li class="navegacao"><a href="formato.html"> Formato </a></li>
+                <li class="navegacao"><a href="equipes.html"> Equipes </a></li>
+                <li class="navegacao"><a href="provas.html"> Provas e Metas </a></li>
+                <li class="navegacao"><a href="integracao.html"> Integração </a></li>
+                <li class="navegacao"><a href="cronograma.html"> Cronograma </a></li>
+                <li class="navegacao"><a href="calculadora.html"> Calculadora </a></li>
+            </ul>
         </nav>
-        <header>
+    </header>
 
-        </header>
-        <main>
-            <section>
+    <main>
+        <section class="containerCarrossel">
+            <button class="botaoAnterior" onclick="moverSlide(-1)">&#10094;</button>
+            <div class="carrossel">
+                <div class="slideItem ativo">
+                    <img src="img/banner1.jpg" alt="Banner 1">
+                </div>
+                <div class="slideItem">
+                    <img src="img/banner2.jpg" alt="Banner 2">
+                </div>
+                <div class="slideItem">
+                    <img src="img/formato.JPG" alt="Banner 3">
+                </div>
+            </div>
+            <button class="proximoBotao" onclick="moverSlide(1)">&#10095;</button>
+        </section>
 
-            </section>
-            <section>
+        <section class="gradePaineis">
+            <div class="painelCard">
+                <a href="equipes.html">
+                    <img src="img/banner2.JPG" alt="equipes">
+                    <div class="etiquetaPainel etiquetaRosa">EQUIPES</div>
+                </a>
+            </div>
+            <div class="painelCard">
+                <a href="provas.html">
+                    <img src="img/provas.JPG" alt="provas&metas">
+                    <div class="etiquetaPainel etiquetaVerde">PROVAS & METAS</div>
+                </a>
+            </div>
+            <div class="painelCard">
+                <a href="formato.html">
+                    <img src="img/formato.JPG" alt="formato">
+                    <div class="etiquetaPainel etiquetaPreta">FORMATO</div>
+                </a>
+            </div>
+            <div class="painelCard">
+                <a href="integracao.html">
+                    <img src="img/integracao.jpg" alt="Integração">
+                    <div class="etiquetaPainel etiquetaRoxa">INTEGRAÇÃO</div>
+                </a>
+            </div>
+        </section>
+    </main>
 
-            </section>
-        </main>
+    <main class="info">
+        <section class="containerInformacoes">
+            <h3> Nossa Identidade </h3>
+            <p> O UniFACEF, fundado em 1951, tem como missão construir e difundir o conhecimento,
+                contribuindo para a formação do ser humano com ética e cidadania </p>
+            <div class="pilar">
+                <strong> 🎓 Formação </strong>
+                <p> Capacitar cidadãos para a vida profissional e comunitária pelo saber e pelo ser </p>
+            </div>
+            <div class="pilar">
+                <strong> 🤝 Solidariedade </strong>
+                <p> Participar da busca de soluções para os problemas da comunidade local e regional </p>
+            </div>
+            <div class="pilar">
+                <strong> 💡 Ética </strong>
+                <p> Promover o bem comum e o progresso social através de ações éticas e humanas </p>
+            </div>
+        </section>
 
-    </body>
+        <section class="containerInformacoes">
+            <h3> Nosso Objetivo </h3>
+            <p> Integrar os estudantes dos primeiros períodos à comunidade acadêmica com ações de solidariedade para com
+                a sociedade</p>
+        </section>
+
+        <section class="containerInformacoes">
+            <div class="aviso">
+                <strong> 📅 Entrega das Arrecadações </strong>
+                <p> Dia 24/03/2026, das 8h às 10h00, na Unidade I </p>
+            </div>
+            <div class="aviso">
+                <strong>🎉 Noite de Encerramento </strong>
+                <p> Dia 27/03/2026, a partir das 19h15, no Hall Central da Unidade II </p>
+            </div>
+        </section>
+
+        <section class="containerInformacoes">
+            <h3> Horas-Atividade </h3>
+            <div class="att-container">
+                <div class="att">
+                    <strong> 30h: Kit Alimentação + Suplemento. </strong>
+                </div>
+                <div class="att">
+                    <strong> 20h: Doação de Sangue. </strong>
+                </div>
+                <div class="att">
+                    <strong> Limite: Até 60 horas por estudante. </strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Coordenação Trote Solidário 2026: trotesolidário@facef.br </p>
+        <h3> Uni-FACEF - Centro Universitário Municipal de Franca </h3>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
 </html>

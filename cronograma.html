@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png">
+    <title>Trote Solidário 2026 - Uni-FACEF</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerLogo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo Uni-FACEF">
+            </a>
+        </div>
+        <nav>
+            <ul class="listaNavegacao">
+                <li class="navegacao"><a href="index.html"> Início </a></li>
+                <li class="navegacao"><a href="introducao.html"> Introdução </a></li>
+                <li class="navegacao"><a href="formato.html"> Formato </a></li>
+                <li class="navegacao"><a href="equipes.html"> Equipes </a></li>
+                <li class="navegacao"><a href="provas.html"> Provas e Metas </a></li>
+                <li class="navegacao"><a href="integracao.html"> Integração </a></li>
+                <li class="navegacao"><a href="cronograma.html"> Cronograma </a></li>
+                <li class="navegacao"><a href="calculadora.html"> Calculadora </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="info">
+        <section class="containerInformacoes">
+            <h3> 📅 Datas Importantes </h3>
+            <div class="timeline">
+                <div class="evento">
+                    <strong> 24 de Fevereiro (18h15) </strong>
+                    <p> Abertura Oficial e Sorteio de Cores </p>
+                </div>
+
+                <div class="evento">
+                    <strong> 02 de Março </strong>
+                    <p> Data limite para informar a entidade social escolhida </p>
+                </div>
+                <div class="evento">
+                    <strong> 24 de Março </strong>
+                    <p> Entrega de alimentos, Suplementos e Comprovantes </p>
+                </div>
+
+                <div class="evento">
+                    <strong> 27 de Março </strong>
+                    <p> Noite de encerramento </p>
+                </div>
+            </div>
+        </section>
+        <section class="containerInformacoes">
+            <h3> 📍 Onde entregar e participar </h3>
+            <div class="grid-locais">
+                <div id="unidadeI" class="unidade">
+                    <h4> Unidade I </h4>
+                    <p> Av. Major Nicácio, 2433 </p>
+                    <img style="width: 100%; border-radius: 20px;" src="img/fafec_new.jpg" alt="Unidade I">
+                </div>
+                <div id="unidadeII" class="unidade">
+                    <h4> Unidade II </h4>
+                    <p> Av. Ismael Alonso Y Alonso, 2400 </p>
+                    <img style="width: 100%; border-radius: 20px;" src="img/unidade2.jpg" alt="Unidade II">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ADICIONE este bloco logo antes de </body> no cronograma.html -->
+
+    <div id="mapaFlutuante">
+        <button id="fecharMapa">✖</button>
+        <iframe id="iframeMapa" src="" loading="lazy"></iframe>
+    </div>
+
+    <script>
+
+        const unidadeI = document.getElementById("unidadeI");
+        const unidadeII = document.getElementById("unidadeII");
+        const mapaFlutuante = document.getElementById("mapaFlutuante");
+        const iframeMapa = document.getElementById("iframeMapa");
+        const fecharMapa = document.getElementById("fecharMapa");
+
+        const locais = {
+            unidadeI: {
+                embed: "https://www.google.com/maps?q=Av.+Major+Nicácio,+2433,+Franca+SP&output=embed",
+                link: "https://www.google.com/maps/search/?api=1&query=Av.+Major+Nicácio,+2433,+Franca+SP"
+            },
+            unidadeII: {
+                embed: "https://www.google.com/maps?q=Av.+Ismael+Alonso+Y+Alonso,+2400,+Franca+SP&output=embed",
+                link: "https://www.google.com/maps/search/?api=1&query=Av.+Ismael+Alonso+Y+Alonso,+2400,+Franca+SP"
+            }
+        };
+
+        let areaAtiva = false;
+
+        function mostrarMapa(local) {
+            iframeMapa.src = locais[local].embed;
+            mapaFlutuante.style.display = "block";
+        }
+
+        function esconderMapa() {
+            if (!areaAtiva) {
+                mapaFlutuante.style.display = "none";
+                iframeMapa.src = "";
+            }
+        }
+
+        /* UNIDADE I */
+        unidadeI.addEventListener("mouseenter", () => {
+            areaAtiva = true;
+            mostrarMapa("unidadeI");
+        });
+
+        unidadeI.addEventListener("mouseleave", () => {
+            areaAtiva = false;
+            setTimeout(esconderMapa, 150);
+        });
+
+        unidadeI.addEventListener("click", () => {
+            window.open(locais.unidadeI.link, "_blank");
+        });
+
+        /* UNIDADE II */
+        unidadeII.addEventListener("mouseenter", () => {
+            areaAtiva = true;
+            mostrarMapa("unidadeII");
+        });
+
+        unidadeII.addEventListener("mouseleave", () => {
+            areaAtiva = false;
+            setTimeout(esconderMapa, 150);
+        });
+
+        unidadeII.addEventListener("click", () => {
+            window.open(locais.unidadeII.link, "_blank");
+        });
+
+        /* MAPA FLUTUANTE */
+        mapaFlutuante.addEventListener("mouseenter", () => {
+            areaAtiva = true;
+        });
+
+        mapaFlutuante.addEventListener("mouseleave", () => {
+            areaAtiva = false;
+            esconderMapa();
+        });
+
+        fecharMapa.addEventListener("click", () => {
+            areaAtiva = false;
+            esconderMapa();
+        });
+    </script>
+
+    <footer>
+        <p> Coordenação Trote Solidário 2026: trotesolidário@facef.br </p>
+        <h3> Uni-FACEF - Centro Universitário Municipal de Franca </h3>
+    </footer>
+</body>
+
+</html>

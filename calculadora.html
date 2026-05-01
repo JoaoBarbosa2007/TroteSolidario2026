@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png">
+        <script src="calculadora.js" defer></script>
+    <title>Trote Solidário 2026 - Uni-FACEF</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerLogo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo Uni-FACEF">
+            </a>
+        </div>
+        <nav>
+            <ul class="listaNavegacao">
+                <li class="navegacao"><a href="index.html"> Início </a></li>
+                <li class="navegacao"><a href="introducao.html"> Introdução </a></li>
+                <li class="navegacao"><a href="formato.html"> Formato </a></li>
+                <li class="navegacao"><a href="equipes.html"> Equipes </a></li>
+                <li class="navegacao"><a href="provas.html"> Provas e Metas </a></li>
+                <li class="navegacao"><a href="integracao.html"> Integração </a></li>
+                <li class="navegacao"><a href="cronograma.html"> Cronograma </a></li>
+                <li class="navegacao"><a href="calculadora.html"> Calculadora </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="info">
+        <section  class="containerInformacoes">
+            <h3> 🧮 Simulador de Pontos: Itens Avulsos </h3>
+            <p> Insira a quantidade de itens arrecadados para calcular a pontuação total da equipe. </p>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label> Arroz (5kg) - 10 pts </label>
+                    <input type="number" id="qtdeArroz" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Feijão (2kg) - 8 pts </label>
+                    <input type="number" id="qtdeFeijao" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Óleo de Soja (unidade) - 4 pts </label>
+                    <input type="number" id="qtdeOleo" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Pacote Macarrão (500g) - 2 pts </label>
+                    <input type="number" id="qtdeMacarrao" min="0" oninput="limitarInput(this)">
+                </div>
+            </div>
+        </section>
+        <section  class="containerInformacoes">
+            <h3> 🧮 Simulador de Pontos: Metas Batidas </h3>
+            <p> Insira a quantidade de itens arrecadados para calcular a pontuação total da equipe. </p>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label> Selecione a cor da equipe </label>
+                    <select id="cor">
+                        <option value="amarela"> Amarela </option>
+                        <option value="cinza"> Cinza </option>
+                        <option value="laranja"> Laranja </option>
+                        <option value="marrom"> Marrom </option>
+                        <option value="preta"> Preta </option>
+                        <option value="rosa"> Rosa </option>
+                        <option value="roxa"> Roxa </option>
+                        <option value="verde"> Verde </option>
+                        <option value="vermelha"> Vermelha </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label> Kit Alimentação </label>
+                    <input type="number" id="qtdeKits" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Suplementos Alimentares (Lata Ensure ou Nutren 1.0) </label>
+                    <input type="number" id="qtdeSuplementos" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Campanha do Leite (1L) </label>
+                    <input type="number" id="qtdeLeite" min="0" oninput="limitarInput(this)">
+                </div>
+                <div class="form-group">
+                    <label> Doação de Sangue (Bolsas Doadas) </label>
+                    <input type="number" id="qtdeSangue" min="0" oninput="limitarInput(this)">
+                </div>
+            </div>
+        </section>
+        <section  class="containerInformacoes">
+            <h3> 🧮 Simulador de Pontos: Homenagem aos 75 anos Uni-FACEF </h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label> Criatividade (até 500 pontos) </label>
+                    <input type="number" id="criatividadeAps" min="0" max="500" oninput="limitarInput500(this)">
+                </div>
+                <div class="form-group">
+                    <label> Performance (até 500 pontos) </label>
+                    <input type="number" id="performanceAps" min="0" max="500" oninput="limitarInput500(this)">
+                </div>
+                <div class="form-group">
+                    <label> Contextualização (até 500 pontos) </label>
+                    <input type="number" id="contextualizacaoAps" min="0" max="500" oninput="limitarInput500(this)">
+                </div>
+                <div class="form-group">
+                    <label> Minutagem da Apresentação (00:00) </label>
+                    <input type="text" id="minutagemAps" placeholder="00:00" maxlength="5"
+                        oninput="formatarTempo(this)">
+                </div>
+            </div>
+        </section>
+        <section  class="containerInformacoes">
+            <h3> 🧮 Simulador de Pontos: Mascote da Equipe </h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label> Originalidade – (notas de 0 a 200) </label>
+                    <input type="number" id="originalidadeMsc" min="0" max="200" oninput="limitarInput200(this)">
+                </div>
+                <div class="form-group">
+                    <label> Caracterização – (notas de 0 a 150) </label>
+                    <input type="number" id="caracterizacaoMsc" min="0" max="150" oninput="limitarInput150(this)">
+                </div>
+                <div class="form-group">
+                    <label> Atuação – (notas de 0 a 150) </label>
+                    <input type="number" id="atuacaoMsc" min="0" max="150" oninput="limitarInput150(this)">
+                </div>
+            </div>
+        </section>
+        <section  class="containerInformacoes">
+            <h3> 🧮 Simulador de Pontos: Atividades Recreativas </h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label> Informe qual foi a pontuação da equipe obtida na gincana </label>
+                    <input type="number" id="attRecreativa" min="0" oninput="limitarInputFn(this)">
+                </div>
+            </div>
+        </section>
+        <section  class="containerInformacoes">
+            <button onclick="calcular()"> Calcular Total da Equipe </button>
+            <div id="resultado" class="resultado-box">
+                Pontuação Total: 0 pontos
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> Coordenação Trote Solidário 2026: trotesolidário@facef.br </p>
+        <h3> Uni-FACEF - Centro Universitário Municipal de Franca </h3>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
